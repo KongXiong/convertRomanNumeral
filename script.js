@@ -15,11 +15,7 @@ function checkInputNan(userInput, numMessage){
 function getInput(numMessage){
 	var input;
 	input = prompt(numMessage);
-	return input;
-}
-
-function convertTheThing (){
-
+	return input.toUpperCase();
 }
 
 function makeArray(userInput){
@@ -31,8 +27,6 @@ function makeArray(userInput){
 	}
 	return array;
 }
-
-
 
 function main(){
 	var userInput;
@@ -63,13 +57,7 @@ function main(){
 	}
 	numMessage = "What number would you like to convert?"
 	userInput = getInput(numMessage);
-	//inputArray = makeArray(userInput);
-	//checkedInput = 
-	//checkedInput = checkInputNan(userInput, numMessage);
-	//convertInput(userInput, myArray)
 	total = '';
-	
-	
 	
 	if (isNaN(userInput)){
 		for (var it = 0; it < userInput.length; it++){
@@ -90,6 +78,8 @@ function main(){
 				for (var key in romanObj){
 					if (userInput[it] === key){
 						total = +total + romanObj[key];
+					} else if (userInput[it] != key){
+						break;
 					}
 				}
 			}
@@ -106,7 +96,8 @@ function main(){
 			}
 		} alert(endNum);
 	}
+	window.location.reload();
 }
 
-main();
 
+main();
